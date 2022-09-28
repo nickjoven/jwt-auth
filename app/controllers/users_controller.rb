@@ -29,6 +29,8 @@ class UsersController < ApplicationController
     end
   end
 
+
+  # GET /profile
   def profile
     token = request.headers["token"]
     user_id = decode_token(token)
