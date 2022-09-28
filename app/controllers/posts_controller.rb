@@ -15,13 +15,10 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = Post.new(post_params)
-
-    if @post.save
-      render json: @post, status: :created, location: @post
-    else
-      render json: @post.errors, status: :unprocessable_entity
-    end
+    token = request.headers["token"]
+    user_id = decode_token(token)
+    post = Post.create!(content: params[:content], user_id: user_id)
+    render json: post
   end
 
   # PATCH/PUT /posts/1
