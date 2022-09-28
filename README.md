@@ -31,7 +31,7 @@ If you have *zero* security measures in place, your user passwords are probably 
 
 So, let's encrypt and authenticate.
 
-## Fast and Unexplained Method: bcrypt and JWT
+## TLDR; bcrypt and JWT
 
 ### Password encryption
 
