@@ -71,7 +71,9 @@ Now that the passwords have been fixed up, we want to use something called `loca
 1. Install `jwt` with `gem install jwt` or putting `gem jwt` in your gemfile and running bundle install. **REMEMBER TO STOP AND START YOUR SERVER HEREABOUTS**
 2. Toss these methods into your `app/controllers/application_controller.rb` file.
 ```ruby
-def get_secret_key # in production your secret key should be a variable in a .env file that is not visible on github ( who remembers how to do that)
+def get_secret_key 
+# in production your secret key should be a variable in a .env file that is not visible on github 
+# (but who remembers how to do that)
     "123"
 end
 
@@ -84,7 +86,7 @@ def decode_token(token)
 end  
 ```
 
-You want your other controllers to have access to these methods. You also may want to rescue from JWT-related errors here, but that's another lesson for <after I learn how to do that>. 
+You want your other controllers to have access to these methods. You also may want to rescue from JWT-related errors here, but that's another lesson for `<after I learn how to do that>`. 
 
 3. Use these methods in your controllers to replace plain old `user_id`s.
 
@@ -144,7 +146,7 @@ Take the token you get from logging in (or any route that gives you a token) and
 Example:
 
 ```
-curl -X POST -H "Content-Type: application/json" -H "token: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.kK4OImFfNUEiTyj5uGl00buwlyITPJQHKBzpeRH6lOM" http://localhost:3000/posts -d '{"content": "TOKENS HOLY SHIT"}'
+curl -X POST -H "Content-Type: application/json" -H "token: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.kK4OImFfNUEiTyj5uGl00buwlyITPJQHKBzpeRH6lOM" http://localhost:3000/posts -d '{"content": "TOKENS@@@@@@"}'
 ```
 
 
