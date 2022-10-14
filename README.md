@@ -146,7 +146,7 @@ Take the token you get from logging in (or any route that gives you a token) and
 Example:
 
 ```
-curl -X POST -H "Content-Type: application/json" -H "token: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.kK4OImFfNUEiTyj5uGl00buwlyITPJQHKBzpeRH6lOM" http://localhost:3000/posts -d '{"content": "TOKENS@@@@@@"}'
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.kK4OImFfNUEiTyj5uGl00buwlyITPJQHKBzpeRH6lOM" http://localhost:3000/posts -d '{"content": "TOKENS@@@@@@"}'
 ```
 
 
